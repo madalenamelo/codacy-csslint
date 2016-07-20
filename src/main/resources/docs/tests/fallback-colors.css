@@ -1,0 +1,8 @@
+/*#Patterns: fallback-colors */
+
+.mybox {
+    /*#Warn: fallback-colors */
+    color: rgba(100, 100, 200, 0.5);
+}
+
+

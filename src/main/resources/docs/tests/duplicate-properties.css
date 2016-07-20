@@ -1,0 +1,10 @@
+/*#Patterns: duplicate-properties */
+
+.mybox {
+    width: 100px;
+    height: 100px;
+    /*#Warn: duplicate-properties */
+    width: 120px;
+}
+
+

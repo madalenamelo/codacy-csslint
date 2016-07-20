@@ -1,0 +1,6 @@
+/*#Patterns: overqualified-elements */
+
+/*#Warn: overqualified-elements */
+li.foo {
+    color: #ddd;
+}

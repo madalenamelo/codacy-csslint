@@ -1,0 +1,145 @@
+{
+  "name": "CSSLint",
+  "patterns": [
+    {
+      "patternId": "adjoining-classes",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "regex-selectors",
+      "level": "Warning",
+      "category": "Performance"
+    },
+    {
+      "patternId": "universal-selector",
+      "level": "Warning",
+      "category": "Performance"
+    },
+    {
+      "patternId": "unqualified-attributes",
+      "level": "Warning",
+      "category": "Performance"
+    },
+    {
+      "patternId": "zero-units",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "overqualified-elements",
+      "level": "Warning",
+      "category": "Performance"
+    },
+    {
+      "patternId": "shorthand",
+      "level": "Warning",
+      "category": "Performance"
+    },
+    {
+      "patternId": "duplicate-background-images",
+      "level": "Warning",
+      "category": "Performance"
+    },
+    {
+      "patternId": "box-model",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "box-sizing",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "bulletproof-font-face",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "compatible-vendor-prefixes",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "display-property-grouping",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "duplicate-properties",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "empty-rules",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "errors",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "fallback-colors",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "gradients",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "ids",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "import",
+      "level": "Warning",
+      "category": "Performance"
+    },
+    {
+      "patternId": "important",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "known-properties",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "outline-none",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "qualified-headings",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "star-property-hack",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "text-indent",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "underscore-property-hack",
+      "level": "Warning",
+      "category": "Compatibility"
+    },
+    {
+      "patternId": "unique-headings",
+      "level": "Warning",
+      "category": "ErrorProne"
+    }
+  ]
+}

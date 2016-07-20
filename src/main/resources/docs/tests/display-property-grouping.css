@@ -1,0 +1,8 @@
+/*#Patterns: display-property-grouping */
+
+.mybox {
+    display: inline;
+    /*#Warn: display-property-grouping */
+    height: 5px;
+}
+

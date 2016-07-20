@@ -1,0 +1,6 @@
+/*#Patterns: qualified-headings */
+
+/*#Warn: qualified-headings */
+.foo h1 {
+    font-size: 110%;
+}

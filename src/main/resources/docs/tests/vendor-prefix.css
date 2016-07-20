@@ -1,0 +1,10 @@
+/*->Patterns: vendor-prefix */
+
+/*->Warn: vendor-prefix */
+.mybox {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+

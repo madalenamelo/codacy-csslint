@@ -1,0 +1,9 @@
+/*#Patterns: text-indent */
+
+.mybox {
+    /*#Warn: text-indent */
+    text-indent: -9999px;
+}
+
+
+

@@ -1,0 +1,170 @@
+[
+  {
+    "patternId": "adjoining-classes",
+    "title": "Avoid adjoining classes",
+    "description": "Avoid the use of adjoining classes, also called class chaining, look like '.foo.bar'.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "regex-selectors",
+    "title": "Avoid regular expressions selectors",
+    "description": "Avoid the use of regular expressions as selectors.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "universal-selector",
+    "title": "Avoid universal selector",
+    "description": "Avoid the use of the universal selector.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "unqualified-attributes",
+    "title": "Avoid unqualified attribute selectors",
+    "description": "Avoid the use of unqualified attribute selectors.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "zero-units",
+    "title": "Prohibit zero units",
+    "description": "Prohibit the use of units with the value zero.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "overqualified-elements",
+    "title": "Avoid overqualified elements",
+    "description": "Avoid the use of overqualified elements.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "shorthand",
+    "title": "Enforce shorthand properties",
+    "description": "Enforce the use of shorthand properties.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "duplicate-background-images",
+    "title": "Prohibit duplicated background images",
+    "description": "Prohibit the use of duplicated background images between selectors.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "box-model",
+    "title": "Prohibit broken box size",
+    "description": "Don't use width or height when using padding or border.",
+    "timeToFix": 10
+  },
+  {
+    "patternId": "box-sizing",
+    "title": "Disallow use of box-sizing",
+    "description": "The box-sizing properties isn't supported in IE6 and IE7.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "bulletproof-font-face",
+    "title": "Enforce @font-face syntax",
+    "description": "Use the bulletproof @font-face syntax to avoid 404's in old versions of IE.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "compatible-vendor-prefixes",
+    "title": "Enforce vendor prefixes",
+    "description": "Include all compatible vendor prefixes to reach a wider range of users.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "display-property-grouping",
+    "title": "Require properties appropriate for display",
+    "description": "Certain properties shouldn't be used with certain display property values.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "duplicate-properties",
+    "title": "Prohibit duplicate properties",
+    "description": "Duplicate properties must appear one after the other.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "empty-rules",
+    "title": "Prohibit empty rules",
+    "description": "Rules without any properties specified should be removed.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "errors",
+    "title": "Prohibit syntax errors",
+    "description": "There should be no syntax errors.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "fallback-colors",
+    "title": "Enforce fallback colors",
+    "description": "For older browsers that don't support RGBA, HSL, or HSLA, provide a fallback color.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "gradients",
+    "title": "Enforce gradient prefixes",
+    "description": "When using a vendor-prefixed gradient, make sure to use them all.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ids",
+    "title": "Prohibit IDs in selectors",
+    "description": "Selectors should not contain IDs.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "import",
+    "title": "Prohibit @import",
+    "description": "Don't use @import, use <link> instead.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "important",
+    "title": "Prohibit !important",
+    "description": "Be careful when using !important declaration.",
+    "timeToFix": 15
+  },
+  {
+    "patternId": "known-properties",
+    "title": "Enforce known CSS3 properties",
+    "description": "Properties should be known (listed in CSS3 specification) or be a vendor-prefixed property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "outline-none",
+    "title": "Prohibit outline: none",
+    "description": "Use of outline: none or outline: 0 should be limited to :focus rules.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "qualified-headings",
+    "title": "Prohibit qualified headings",
+    "description": "Headings should not be qualified (namespaced).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "star-property-hack",
+    "title": "Prohibit star prefix",
+    "description": "Checks for the star property hack (targets IE6/7).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "text-indent",
+    "title": "Prohibit negative text-indent",
+    "description": "Checks for text indent less than -99px.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "underscore-property-hack",
+    "title": "Prohibit underscore prefix",
+    "description": "Checks for the underscore property hack (targets IE6).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "unique-headings",
+    "title": "Prohibit multiple headings",
+    "description": "Headings should only be defined once.",
+    "timeToFix": 5
+  }
+]

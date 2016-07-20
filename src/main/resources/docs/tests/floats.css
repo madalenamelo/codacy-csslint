@@ -1,0 +1,46 @@
+/* Disabled->Patterns: floats */
+
+.bar {
+    float: left;
+}
+
+.bar1 {
+    float: left;
+}
+
+.bar2 {
+    float: left;
+}
+
+.bar3 {
+    float: left;
+}
+
+.bar4 {
+    float: left;
+}
+
+.bar5 {
+    float: left;
+}
+
+.bar6 {
+    float: left;
+}
+
+.bar7 {
+    float: left;
+}
+
+.bar8 {
+    float: left;
+}
+
+.bar81 {
+    float: left;
+}
+
+/*->Warn: floats */
+.bar9 {
+    float: left;
+}

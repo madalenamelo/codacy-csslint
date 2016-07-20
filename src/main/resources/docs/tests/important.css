@@ -1,0 +1,6 @@
+/*#Patterns: important */
+
+.mybox {
+    /*#Warn: important */
+    color: red !important;
+}

@@ -1,0 +1,10 @@
+/*#Patterns: underscore-property-hack */
+
+.mybox {
+    width: 100px;
+    /*#Warn: underscore-property-hack */
+    _width: 200px;
+}
+
+
+

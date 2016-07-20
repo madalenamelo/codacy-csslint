@@ -1,0 +1,46 @@
+/*->Patterns: font-sizes */
+
+.small1 {
+    font-size: 8px;
+}
+
+.medium1 {
+    font-size: 11px;
+}
+
+.large1 {
+    font-size: 14px;
+}
+
+.small2 {
+    font-size: 8px;
+}
+
+.medium2 {
+    font-size: 11px;
+}
+
+.large2 {
+    font-size: 14px;
+}
+
+.small3 {
+    font-size: 8px;
+}
+
+.medium3 {
+    font-size: 11px;
+}
+
+.large3 {
+    font-size: 14px;
+}
+
+.small4 {
+    font-size: 8px;
+}
+
+/*->Warn: font-sizes */
+.medium4 {
+    font-size: 11px;
+}

@@ -1,0 +1,7 @@
+/*#Patterns: star-property-hack */
+
+.mybox {
+    width: 100px;
+    /*#Warn: star-property-hack */
+    *width: 200px;
+}

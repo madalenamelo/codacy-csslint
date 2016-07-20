@@ -1,0 +1,6 @@
+/*#Patterns: known-properties */
+
+body {
+    /*#Warn: known-properties */
+    back-my-unknown: blue;
+}

@@ -1,0 +1,21 @@
+Early on in web development, including the same CSS property twice was certainly an error, especially if there were two different values.
+For example:
+
+     .mybox {
+       width: 100px;
+       width: 120px;
+     }
+
+Anyone looking at this code would think that this is clearly an error. Recently, however, including duplicate properties
+is used as a way to deal with varying levels of browser support for CSS properties.
+For example, some browsers support RGBA color while others do not, so it's quite common to see patterns such as:
+
+     .mybox {
+       background: #fff;
+       background: rgba(255, 255, 255, 0.5);
+     }
+
+This is quite clearly intentional. The developer wants to use RGBA when available but wants to fall back to a regular color when not available.
+
+[Source](https://github.com/CSSLint/csslint/wiki/Disallow-duplicate-properties)
+      

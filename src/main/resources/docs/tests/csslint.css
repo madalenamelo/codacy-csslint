@@ -1,0 +1,7 @@
+/*#Patterns: adjoining-classes*/
+
+/*#Warn: adjoining-classes*/
+.class1.class2 {
+    height: 10px;
+    padding: 10px;
+}

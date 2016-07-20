@@ -1,0 +1,39 @@
+/*#Patterns: zero-units, universal-selector, universal-selector, shorthand, regex-selectors, unqualified-attributes, duplicate-background-images*/
+
+.foo {
+    /*#Warn: zero-units*/
+    width: 0px;
+    height: 0;
+}
+
+/*#Warn: universal-selector*/
+.ex-class * {
+    color: #fff;
+}
+
+/*#Warn: shorthand*/
+.foo {
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+/*#Warn: regex-selectors*/
+a[class*=ex-name] {
+    color: red;
+}
+
+/*#Warn: unqualified-attributes*/
+.ex-class [type=text] {
+    font-size: 16px;
+}
+
+.icon-a {
+    background: url(icons.png) 10px 0 no-repeat;
+}
+
+.icon-b {
+    /*#Warn: duplicate-background-images*/
+    background: url(icons.png) 20px 0 no-repeat;
+}

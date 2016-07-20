@@ -1,0 +1,9 @@
+/*#Patterns: box-model */
+
+.mybox {
+    /*#Warn: box-model */
+    border: 1px solid black;
+    /*#Warn: box-model */
+    padding: 5px;
+    width: 100px;
+}

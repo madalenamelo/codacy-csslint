@@ -1,0 +1,6 @@
+/*#Patterns: box-sizing */
+
+.mybox {
+    /*#Warn: box-sizing */
+    box-sizing: border-box;
+}

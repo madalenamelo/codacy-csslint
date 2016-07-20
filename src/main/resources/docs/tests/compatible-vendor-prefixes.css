@@ -1,0 +1,7 @@
+/*#Patterns: compatible-vendor-prefixes */
+
+.my-class {
+    /*#Warn: compatible-vendor-prefixes */
+    -moz-box-sizing: 10px;
+    animation: false;
+}

@@ -1,0 +1,6 @@
+/*#Patterns: errors */
+
+.bla bla {
+    /*#Err: errors */
+    wid th: 4 0px;
+}
