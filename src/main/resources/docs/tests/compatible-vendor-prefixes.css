@@ -1,7 +1,7 @@
 /*#Patterns: compatible-vendor-prefixes */
 
-.my-class {
+/* Missing -moz, -ms, and -o */
+.mybox {
     /*#Warn: compatible-vendor-prefixes */
-    -moz-box-sizing: 10px;
-    animation: false;
+    -webkit-transform: translate(50px, 100px);
 }
