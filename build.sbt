@@ -27,7 +27,7 @@ version in Docker := "1.0"
 
 val installAll =
   s"""apk update && apk add bash
-     |&& apk add nodejs
+     |&& apk add nodejs-current-npm
      |&& npm install -g csslint@1.0.3
    """.stripMargin.replaceAll(System.lineSeparator(), " ")
 
