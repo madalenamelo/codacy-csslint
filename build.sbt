@@ -4,7 +4,7 @@ name := """codacy-engine-csslint"""
 
 version := "1.0-SNAPSHOT"
 
-val languageVersion = "2.11.7"
+val languageVersion = "2.12.7"
 
 scalaVersion := languageVersion
 
@@ -14,9 +14,9 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play-json" % "2.3.8" withSources(),
-  "org.scala-lang.modules" %% "scala-xml" % "1.0.4" withSources(),
-  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.1"
+  "com.typesafe.play" %% "play-json" % "2.7.3" withSources(),
+  "org.scala-lang.modules" %% "scala-xml" % "1.0.6" withSources(),
+  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.9" withSources()
 )
 
 enablePlugins(JavaAppPackaging)
@@ -31,15 +31,18 @@ val installAll =
      |&& npm install -g csslint@1.0.3
    """.stripMargin.replaceAll(System.lineSeparator(), " ")
 
-mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
-  val src = resourceDir / "docs"
-  val dest = "/docs"
+mappings.in(Universal) ++= resourceDirectory
+  .in(Compile)
+  .map { resourceDir: File =>
+    val src = resourceDir / "docs"
+    val dest = "/docs"
 
-  for {
-    path <- (src ***).get
-    if !path.isDirectory
-  } yield path -> path.toString.replaceFirst(src.toString, dest)
-}
+    (for {
+      path <- better.files.File(src.toPath).listRecursively()
+      if !path.isDirectory
+    } yield path.toJava -> path.toString.replaceFirst(src.toString, dest)).toSeq
+  }
+  .value
 
 val dockerUser = "docker"
 val dockerGroup = "docker"
@@ -48,15 +51,14 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "frolvlad/alpine-oraclejdk8"
+dockerBaseImage := "frolvlad/alpine-java"
 
 dockerCommands := dockerCommands.value.flatMap {
-  case cmd@Cmd("WORKDIR", _) => List(cmd,
-    Cmd("RUN", installAll)
-  )
-  case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
-    Cmd("RUN", "mv /opt/docker/docs /docs"),
+  case cmd@(Cmd("ADD", _)) => List(
     Cmd("RUN", "adduser -u 2004 -D docker"),
+    cmd,
+    Cmd("RUN", installAll),
+    Cmd("RUN", "mv /opt/docker/docs /docs"),
     ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
   )
   case other => List(other)
