@@ -27,7 +27,7 @@ version in Docker := "1.0"
 
 val installAll =
   s"""apk update && apk add bash
-     |&& apk add nodejs-current-npm
+     |&& apk add nodejs
      |&& npm install -g csslint@1.0.3
    """.stripMargin.replaceAll(System.lineSeparator(), " ")
 
@@ -48,7 +48,7 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "frolvlad/alpine-oraclejdk8"
+dockerBaseImage := "java:8-jre-alpine"
 
 dockerCommands := dockerCommands.value.flatMap {
   case cmd@Cmd("WORKDIR", _) => List(cmd,
