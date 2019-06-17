@@ -51,7 +51,7 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "frolvlad/alpine-java"
+dockerBaseImage := "frolvlad/alpine-java:jre8.202.08-slim"
 
 dockerCommands := dockerCommands.value.flatMap {
   case cmd@(Cmd("ADD", _)) => List(
