@@ -1,7 +1,8 @@
 package codacy.csslint
 
-import codacy.docker.api._
-import codacy.dockerApi.utils.CommandRunner
+import com.codacy.plugins.api.{Options, Source}
+import com.codacy.plugins.api.results.{Pattern, Result, Tool}
+import com.codacy.tools.scala.seed.utils.CommandRunner
 
 import scala.util.{Failure, Success, Try}
 
@@ -9,8 +10,10 @@ object CSSLint extends Tool {
 
   lazy val CssLintMatch = """(.*): line ([0-9]*),.*, ([a-zA-Z]+) - (.*) \((.*)\)""".r
 
-  override def apply(source: Source.Directory, configuration: Option[List[Pattern.Definition]], files: Option[Set[Source.File]])
-                    (implicit specification: Tool.Specification): Try[List[Result]] = {
+  def apply(source: Source.Directory,
+            configuration: Option[List[Pattern.Definition]],
+            files: Option[Set[Source.File]],
+            options: Map[Options.Key, Options.Value])(implicit specification: Tool.Specification): Try[List[Result]] = {
 
 
     val sourceDir = better.files.File(source.path)
