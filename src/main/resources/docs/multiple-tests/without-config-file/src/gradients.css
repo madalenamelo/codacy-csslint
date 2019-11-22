@@ -1,0 +1,8 @@
+/*#Patterns: gradients */
+
+/*#Warn: gradients */
+.bla {
+    background: -moz-linear-gradient(top, #1e5799 0%, #7db9e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1e5799), color-stop(100%, #7db9e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #1e5799 0%, #7db9e8 100%); /* Chrome10+,Safari5.1+ */
+}

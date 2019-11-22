@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="gradients.css">
+        <error source="gradients" line="4" message="Missing vendor-prefixed CSS gradients for Opera 11.1+." severity="warning" />
+    </file>
+</checkstyle>
+

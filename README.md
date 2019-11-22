@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5c2f9919b4de41349383b57b8e008dfd)](https://www.codacy.com/app/Codacy/codacy-csslint?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-csslint&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5c2f9919b4de41349383b57b8e008dfd)](https://www.codacy.com/app/Codacy/codacy-csslint?utm_source=github.com&utm_medium=referral&utm_content=codacy/codacy-csslint&utm_campaign=Badge_Grade)
 [![Build Status](https://circleci.com/gh/codacy/codacy-csslint.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-csslint)
 
 # Codacy CSSLint
@@ -12,13 +12,14 @@ Check the **Docs** section for more information.
 You can create the docker by doing:
 
 ```
+docker build -t codacy-csslint-base .
 sbt docker:publishLocal
 ```
 
 The docker is ran with the following command:
 
 ```
-docker run -it -v $srcDir:/src  <DOCKER_NAME>:<DOCKER_VERSION>
+docker run -it -v $srcDir:/src <DOCKER_NAME>:<DOCKER_VERSION>
 ```
 
 ## Docs

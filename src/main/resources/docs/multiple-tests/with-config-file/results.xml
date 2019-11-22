@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="box-model.css">
+        <error source="box-model" line="5" message="Using width with border can sometimes make elements larger than you expect." severity="warning" />
+        <error source="box-model" line="7" message="Using width with padding can sometimes make elements larger than you expect." severity="warning" />
+    </file>
+</checkstyle>
