@@ -1,48 +1,47 @@
 import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
+import sjsonnew._
+import sjsonnew.BasicJsonProtocol._
+import sjsonnew.support.scalajson.unsafe._
 
-name := """codacy-engine-csslint"""
+name := "codacy-csslint"
 
-version := "1.0-SNAPSHOT"
-
-val languageVersion = "2.12.7"
-
-scalaVersion := languageVersion
-
-resolvers ++= Seq(
-  "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/",
-  "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/releases"
-)
+scalaVersion := "2.13.1"
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play-json" % "2.7.3" withSources(),
-  "org.scala-lang.modules" %% "scala-xml" % "1.0.6" withSources(),
-  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.9" withSources()
+  "com.typesafe.play" %% "play-json" % "2.7.4" withSources (),
+  "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
+  "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0" withSources ()
 )
 
 enablePlugins(JavaAppPackaging)
 
 enablePlugins(DockerPlugin)
 
-version in Docker := "1.0"
+lazy val toolVersionKey = settingKey[String]("The version of the underlying tool retrieved from patterns.json")
 
-val installAll =
-  s"""apk update && apk add bash
-     |&& apk add nodejs-current-npm
-     |&& npm install -g csslint@1.0.3
-   """.stripMargin.replaceAll(System.lineSeparator(), " ")
+toolVersionKey := {
+  case class Patterns(name: String, version: String)
+  implicit val patternsIso: IsoLList[Patterns] =
+    LList.isoCurried((p: Patterns) => ("name", p.name) :*: ("version", p.version) :*: LNil) {
+      case (_, n) :*: (_, v) :*: LNil => Patterns(n, v)
+    }
 
-mappings.in(Universal) ++= resourceDirectory
-  .in(Compile)
-  .map { resourceDir: File =>
+  val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
+  val json = Parser.parseFromFile(jsonFile)
+  val patterns = json.flatMap(Converter.fromJson[Patterns])
+  patterns.get.version
+}
+
+mappings in Universal ++= {
+  (resourceDirectory in Compile) map { resourceDir: File =>
     val src = resourceDir / "docs"
     val dest = "/docs"
 
-    (for {
-      path <- better.files.File(src.toPath).listRecursively()
-      if !path.isDirectory
-    } yield path.toJava -> path.toString.replaceFirst(src.toString, dest)).toSeq
+    for {
+      path <- src.allPaths.get if !path.isDirectory
+    } yield path -> path.toString.replaceFirst(src.toString, dest)
   }
-  .value
+}.value
 
 val dockerUser = "docker"
 val dockerGroup = "docker"
@@ -51,15 +50,15 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "frolvlad/alpine-java:jre8.202.08-slim"
+dockerBaseImage := "codacy-csslint-base"
 
 dockerCommands := dockerCommands.value.flatMap {
-  case cmd@(Cmd("ADD", _)) => List(
-    Cmd("RUN", "adduser -u 2004 -D docker"),
-    cmd,
-    Cmd("RUN", installAll),
-    Cmd("RUN", "mv /opt/docker/docs /docs"),
-    ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
-  )
+  case cmd @ (Cmd("ADD", _)) =>
+    List(
+      Cmd("RUN", "adduser -u 2004 -D docker"),
+      cmd,
+      Cmd("RUN", "mv /opt/docker/docs /docs"),
+      ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
+    )
   case other => List(other)
 }

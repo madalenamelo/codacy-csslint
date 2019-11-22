@@ -1,0 +1,6 @@
+<module name="root">
+    <module name="BeforeExecutionExclusionFileFilter">
+        <property name="fileNamePattern" value="\.csslintrc"/>
+    </module>
+    <module name="gradients" />
+</module>

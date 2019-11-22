@@ -1,5 +1,6 @@
 {
   "name": "CSSLint",
+  "version": "1.0.5",
   "patterns": [
     {
       "patternId": "adjoining-classes",
