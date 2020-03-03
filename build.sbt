@@ -1,6 +1,6 @@
 import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
-import sjsonnew._
 import sjsonnew.BasicJsonProtocol._
+import sjsonnew._
 import sjsonnew.support.scalajson.unsafe._
 
 name := "codacy-csslint"
@@ -10,7 +10,7 @@ scalaVersion := "2.13.1"
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json" % "2.7.4" withSources (),
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
-  "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0" withSources ()
+  "com.codacy" %% "codacy-engine-scala-seed" % "4.0.0" withSources ()
 )
 
 enablePlugins(JavaAppPackaging)
