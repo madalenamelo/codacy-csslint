@@ -5,142 +5,170 @@
     {
       "patternId": "adjoining-classes",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": false
     },
     {
       "patternId": "regex-selectors",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": false
     },
     {
       "patternId": "universal-selector",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": false
     },
     {
       "patternId": "unqualified-attributes",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": false
     },
     {
       "patternId": "zero-units",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "enabled": false
     },
     {
       "patternId": "overqualified-elements",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": false
     },
     {
       "patternId": "shorthand",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": true
     },
     {
       "patternId": "duplicate-background-images",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": false
     },
     {
       "patternId": "box-model",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "box-sizing",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": false
     },
     {
       "patternId": "bulletproof-font-face",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": false
     },
     {
       "patternId": "compatible-vendor-prefixes",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": false
     },
     {
       "patternId": "display-property-grouping",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "duplicate-properties",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "empty-rules",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "errors",
       "level": "Error",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "fallback-colors",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": false
     },
     {
       "patternId": "gradients",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": true
     },
     {
       "patternId": "ids",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "import",
       "level": "Warning",
-      "category": "Performance"
+      "category": "Performance",
+      "enabled": false
     },
     {
       "patternId": "important",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": true
     },
     {
       "patternId": "known-properties",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "outline-none",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": false
     },
     {
       "patternId": "qualified-headings",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     },
     {
       "patternId": "star-property-hack",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": false
     },
     {
       "patternId": "text-indent",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": false
     },
     {
       "patternId": "underscore-property-hack",
       "level": "Warning",
-      "category": "Compatibility"
+      "category": "Compatibility",
+      "enabled": false
     },
     {
       "patternId": "unique-headings",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "enabled": false
     }
   ]
 }
